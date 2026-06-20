@@ -1,18 +1,18 @@
+#include <iostream>
+using namespace std;
 
-    while (i < j) {
-        ps = arr[i] + arr[j];
+int main(){
+    int n = 7;
+    int hs[7]  = { 3, 2,-5,0,4,-7,8};
 
-        if (ts > ps) {
-            i++; // Sum is too small, move the left pointer up
-        }
-        else if (ts < ps) {
-            j--; // Sum is too big, move the right pointer down (Fixed from j++)
-        }
-        else {
-            // Match found! 
-            cout << arr[i] << " " << arr[j];
-            break; // This stops the loop immediately so it doesn't run forever
+    int m=0;
+    for (int s=0; s<7; s++){
+        int c=0;
+        for (int e=s; e<7; e++){
+            c = c + hs[e];
+            m = max(c,m);
         }
     }
+    cout << m;
     return 0;
 }
